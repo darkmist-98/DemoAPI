@@ -14,7 +14,7 @@ public class Books extends BaseTest {
     @Test(description = "Get All book list")
     @Story("Get All List of Books")
     @Severity(SeverityLevel.NORMAL)
-    @Description("Test Description : Verify getting list of all books")
+    @Description("Verify getting list of all books")
     public void getBookListTest(){
         RequestSpecification requestSpecification = RequestBuilder.getNoAuthRequestSpecification();
         Response response = requestSpecification.get(Endpoints.GET_ALL_BOOK_ENDPOINT);
