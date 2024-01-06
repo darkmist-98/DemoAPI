@@ -18,6 +18,6 @@ public class Books extends BaseTest {
     public void getBookListTest(){
         RequestSpecification requestSpecification = RequestBuilder.getNoAuthRequestSpecification();
         Response response = requestSpecification.get(Endpoints.GET_ALL_BOOK_ENDPOINT);
-        response.then().statusCode(2001);
+        response.then().statusCode(200);
     }
 }
