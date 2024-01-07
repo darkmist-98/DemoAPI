@@ -14,7 +14,8 @@ import org.testng.annotations.Test;
 
 public class Checkout extends BaseTest {
 
-    @Test(description = "Verify check out using user id")
+    @Test(description = "<b>Description: Verify check out using user id</b>",
+            groups = {"Smoke","Sanity"})
     public void checkoutTest(){
         JsonNode jsonNode = JsonFileReader.readJsonFile("checkout");
         RequestSpecification requestSpecification = RequestBuilder.postAuthRequestSpecification(jsonNode

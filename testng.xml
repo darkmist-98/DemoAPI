@@ -3,6 +3,7 @@
 <suite name="All Test Suite" parallel="classes" thread-count="2">
     <listeners>
         <listener class-name="com.darkmist.listeners.Listener"/>
+        <!--listener class-name="com.darkmist.listeners.RetryListener"/-->
     </listeners>
     <test name="DemoAPI">
         <classes>

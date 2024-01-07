@@ -7,9 +7,11 @@ import org.testng.ISuiteListener;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.util.Arrays;
+
 public class Listener implements ITestListener, ISuiteListener {
 
-    private static final String MESSAGE = "Test - <b>";
+    //private static final String MESSAGE = "Test - ";
 
     @Override
     public void onStart(ISuite suite) {
@@ -23,22 +25,26 @@ public class Listener implements ITestListener, ISuiteListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        ExtentReportConfig.createTest(result.getMethod().getMethodName());
-        ExtentLogger.logInfo(MESSAGE + result.getMethod().getMethodName() + " is started");
+        String className = result.getMethod().getTestClass().getName();
+        ExtentReportConfig.createTest(result.getMethod().getMethodName(), result.getMethod()
+                .getDescription());
+        ExtentLogger.logInfo(result.getMethod().getMethodName() + " is started");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ExtentLogger.pass(MESSAGE + result.getMethod().getMethodName() + "<b> is passed");
+        ExtentLogger.pass(result.getMethod().getMethodName() + "<b> is passed");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ExtentLogger.fail(MESSAGE + result.getMethod().getMethodName() + "<b> is failed");
+        ExtentLogger.fail(result.getMethod().getMethodName() + "<b> is failed");
+        ExtentLogger.throwable(result);
+
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ExtentLogger.skip(MESSAGE + result.getMethod().getMethodName() + "<b> is skipped");
+        ExtentLogger.skip(result.getMethod().getMethodName() + "<b> is skipped");
     }
 }
