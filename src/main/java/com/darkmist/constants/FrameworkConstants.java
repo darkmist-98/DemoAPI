@@ -13,5 +13,4 @@ public final class FrameworkConstants {
             +"main"+File.separator+"java"+File.separator+"com"+File.separator+"darkmist"+File.separator
             +"payloads";
     public static final String EXTENT_REPORT_PATH = PROJECT_PATH+File.separator+"report";
-    public static final String LOGO_PATH = PROJECT_PATH+File.separator+"eivf_logo.png";
 }

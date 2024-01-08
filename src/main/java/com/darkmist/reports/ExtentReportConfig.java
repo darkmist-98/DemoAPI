@@ -32,11 +32,7 @@ public final class ExtentReportConfig {
                 extentReports.setSystemInfo("Host Name", hostName);
                 extentReports.setSystemInfo("Environment", "Local - Rest Assured");
                 extentReports.setSystemInfo("User Name", System.getProperty("user.name"));
-//                sparkReporter.config().setDocumentTitle("HTML Report");
-//                sparkReporter.config().setReportName("API - Rest Assured");
-//                sparkReporter.config().setTheme(Theme.DARK);
-                sparkReporter.config().setCss(".badge-primary{background-color:#8f2755}");
-                sparkReporter.loadXMLConfig(new File("./spark-config.xml"));
+                sparkReporter.loadJSONConfig(new File("./src/test/resources/extent-config.json"));
 
             }
         }catch (Exception e){
